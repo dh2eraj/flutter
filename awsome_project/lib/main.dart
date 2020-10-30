@@ -12,29 +12,37 @@ class Myapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Welcome"),
-      ),
-      body: Center(
-        child: Container(
-          padding: const EdgeInsets.all(8),
-          alignment: Alignment.center,
-          height: 100,
-          width: 100,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black,
-                    blurRadius: 10,
-                    offset: Offset(2.0, 5.0))
-              ],
-              //shape: BoxShape.circle,
-              color: Colors.teal,
-              gradient: LinearGradient(colors: [Colors.yellow, Colors.red])),
-          child: Text('Hey'),
+        appBar: AppBar(
+          title: Text("Welcome"),
         ),
-      ),
-    );
+        body: Container(
+          color: Colors.black,
+          width: MediaQuery.of(context).size.width, //full width of screen
+          height: MediaQuery.of(context).size.height, //full length of screen
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Container(
+                padding: const EdgeInsets.all(10),
+                color: Colors.red,
+                height: 100,
+                width: 100,
+              ),
+              Container(
+                padding: const EdgeInsets.all(10),
+                color: Colors.yellow,
+                height: 100,
+                width: 100,
+              ),
+              Container(
+                padding: const EdgeInsets.all(10),
+                color: Colors.blue,
+                height: 100,
+                width: 100,
+              )
+            ],
+          ),
+        ));
   }
 }
